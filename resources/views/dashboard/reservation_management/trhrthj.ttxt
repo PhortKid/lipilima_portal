@@ -1,0 +1,30 @@
+      <table class="table table-bordered border-primary ">
+  <thead>
+    <th>GuestNames</th>
+    <th>Rood No</th>
+    <th>Number Of Guest</th>
+    <th>Period To Stay</th>
+    <th>Room Price</th>
+    <th>Check in Date</th>
+    <th>Check Out Date</th>
+    <th>Date Created</th>
+    <th>Total Amount</th>
+
+
+  </thead>
+  <tbody>
+    @foreach($reservations as $reservation)
+    <tr>
+    <td>#</td>
+    <td>{{$reservation->room_id}}</td>
+    <td>{{$reservation->number_of_guests}}</td>
+    <td>{{$reservation->period_to_stay}}</td>
+    <td>{{$reservation->room_price}}</td>
+    <td>{{$reservation->check_in_date}}</td>
+    <td>{{$reservation->check_out_date}}</td>
+    <td>{{$reservation->created_at}}</td>
+    <td>{{$reservation->total_amount}}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>

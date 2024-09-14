@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <select name=""  >
+        {{ greetings }} {{ greetings.length }}
+    </div>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    greetings:'helloword'
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
