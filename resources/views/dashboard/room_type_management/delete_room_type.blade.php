@@ -17,7 +17,9 @@
         {!! html()->form('PUT', route('room_type_management.destroy', $room_type->id))->open() !!}
         @csrf
         {!! html()->hidden('_method', 'DELETE') !!}
-        {!! html()->submit('Delete Room Group')->class('btn btn-danger') !!}
+        
+        {!! html()->submit('Delete Room Group')->class('btn btn-danger') !!}     
+  
       </div>
       {!! html()->form()->close() !!}
     </div>

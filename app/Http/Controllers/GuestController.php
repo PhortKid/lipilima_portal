@@ -43,10 +43,17 @@ class GuestController extends Controller
             'address'=>['required','min:2'],
             'email'=>['required','email','nullable'],
             'phone_number'=>['min:9','max:13','nullable'],
-            'id_or_passport_number'=>['required','min:2'],
             'next_of_kin_name'=>['min:2','nullable'], 
             'ext_of_kin_phone_number'=>['min:2','nullable'],
             'gender'=>['required','min:1'],
+            'purpose_of_visit'=>['required','min:2'],
+            'id_type'=>['required','min:2'],
+            'id_number'=>['required','min:2'],
+            'id_issuing_authority'=>['required','min:2'],
+            'id_expiration_date'=>['required','min:2'],
+            'arriving_from'=>['required','min:2'],
+            'occupation'=>['required','min:2'],
+            'tribe'=>['required','min:2'],
            
           
             ]
@@ -61,10 +68,19 @@ class GuestController extends Controller
         $guest->address=$request->input('address');
         $guest->email=$request->input('email');
         $guest->phone_number=$request->input('phone_number');
-        $guest->id_or_passport_number=$request->input('id_or_passport_number');
+       
         $guest->next_of_kin_name=$request->input('next_of_kin_name');
         $guest->next_of_kin_phone_number=$request->input('next_of_kin_phone_number');
         $guest->gender=$request->input('gender');
+
+        $guest->purpose_of_visit=$request->input('purpose_of_visit');
+        $guest->id_type=$request->input('id_type');
+        $guest->id_number=$request->input('id_number');
+        $guest->id_issuing_authority=$request->input('id_issuing_authority');
+        $guest->id_expiration_date=$request->input('id_expiration_date');
+        $guest->arriving_from=$request->input('arriving_from');
+        $guest->occupation=$request->input('occupation');
+        $guest->tribe=$request->input('tribe');
         $guest->save();
 
 
@@ -105,10 +121,17 @@ class GuestController extends Controller
             'address'=>['required','min:2'],
             'email'=>['required','email','nullable'],
             'phone_number'=>['min:9','max:13','nullable'],
-            'id_or_passport_number'=>['required','min:2'],
             'next_of_kin_name'=>['min:2','nullable'], 
             'ext_of_kin_phone_number'=>['min:2','nullable'],
             'gender'=>['required','min:1'],
+            'purpose_of_visit'=>['required','min:2'],
+            'id_type'=>['required','min:2'],
+            'id_number'=>['required','min:2'],
+            'id_issuing_authority'=>['required','min:2'],
+            'id_expiration_date'=>['required','min:2'],
+            'arriving_from'=>['required','min:2'],
+            'occupation'=>['required','min:2'],
+            'tribe'=>['required','min:2'],
            
           
             ]
@@ -123,10 +146,19 @@ class GuestController extends Controller
         $guest->address=$request->input('address');
         $guest->email=$request->input('email');
         $guest->phone_number=$request->input('phone_number');
-        $guest->id_or_passport_number=$request->input('id_or_passport_number');
+       
         $guest->next_of_kin_name=$request->input('next_of_kin_name');
         $guest->next_of_kin_phone_number=$request->input('next_of_kin_phone_number');
         $guest->gender=$request->input('gender');
+
+        $guest->purpose_of_visit=$request->input('purpose_of_visit');
+        $guest->id_type=$request->input('id_type');
+        $guest->id_number=$request->input('id_number');
+        $guest->id_issuing_authority=$request->input('id_issuing_authority');
+        $guest->id_expiration_date=$request->input('id_expiration_date');
+        $guest->arriving_from=$request->input('arriving_from');
+        $guest->occupation=$request->input('occupation');
+        $guest->tribe=$request->input('tribe');
         $guest->save();
 
         return redirect('dash/guest_management')->with('success','Guest Updated');

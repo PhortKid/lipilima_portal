@@ -24,7 +24,11 @@ return new class extends Migration
             $table->String('arriving_from');
             $table->String('email')->nullable();
             $table->String('phone_number')->nullable();
-            $table->String('id_or_passport_number')->nullable();
+            $table->String('purpose_of_visit')->nullable();
+            $table->String('id_type')->nullable();
+            $table->String('id__number')->nullable();
+            $table->String('id_issuing_authority')->nullable();
+            $table->string('id_expiration_date')->nullable();
             $table->String('next_of_kin_name')->nullable();
             $table->String('next_of_kin_phone_number')->nullable();
             $table->enum('gender',['male','female']);

@@ -33,7 +33,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Edit Room Group</button>
+        <button type="submit" class="btn btn-primary" onclick="alert('disabled')">Edit Room Group</button>
         
       </div>
       {!! html()->form()->close() !!}

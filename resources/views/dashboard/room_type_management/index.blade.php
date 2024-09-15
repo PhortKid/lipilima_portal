@@ -4,7 +4,7 @@
 
 <div class="card">
 <div class="card-header">
-<h3 class="card-title">Room Group  Management</h3>
+<h3 class="card-title">Room Group  Management (edit and delete disabled for a while )</h3>
 <div class="row">
    <div class="col-10"></div>
         <div class="col-2">
@@ -37,8 +37,8 @@
      <td>{{$room_type->name}}</td>
      <td>{{$room_type->cost}}</td>
      <td>{{$room_type->created_at}}</td>
-     <td><a href="" class="" data-toggle="modal" data-target="#EditRoomType{{$room_type->id}}" data-whatever="@mdo"><i class="fa fa-edit text-primary"></i></a></td>
-     <td><a href="#" class="danger" data-toggle="modal" data-target="#DeleteRoomType{{$room_type->id}}" data-whatever="@mdo"><i class="fa fa-trash text-danger"></i></a></td>
+     <td><a href="" class="" data-toggle="modal" data-target="EditRoomType{{$room_type->id}}" data-whatever="@mdo"><i class="fa fa-edit text-primary"></i></a></td>
+     <td><a href="#" class="danger" data-toggle="modal" data-target="DeleteRoomType{{$room_type->id}}" data-whatever="@mdo"><i class="fa fa-trash text-danger"></i></a></td>
      @include('dashboard.room_type_management.edit_room_type')
      @include('dashboard.room_type_management.delete_room_type')
 </tr>

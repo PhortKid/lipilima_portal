@@ -129,6 +129,8 @@
                                     </ul>
                                 </li>
 
+                                
+                                @if(Auth::user()->role == 'Admin')
                                 <li class="nav-header">Tax</li> 
 
                              <!-- Tax Management -->   
@@ -196,7 +198,6 @@
                                 </li>
 
                         
-
                                 
                              <!--  Budget Management -->
 
@@ -221,8 +222,9 @@
 
                         
 
-                                
-                             <!--  Budget Management -->
+                             
+                                @endif   
+                             <!--  car management -->
                             
                             
                             

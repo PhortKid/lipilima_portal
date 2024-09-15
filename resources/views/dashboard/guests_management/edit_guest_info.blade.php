@@ -71,12 +71,7 @@
             <input type="text" class="form-control" id="recipient-name" name="phone_number" value="{{$guest->phone_number}}">
           </div>
 
-                <!-- id_or_passport_number -->
-          <div class="form-group">
-            <label for="id_or_passport_number" class="col-form-label"> ID or Passport No :<i class="text-danger">*</i></label>
-            <input type="text" class="form-control" id="id_or_passport_number" name="id_or_passport_number" value="{{$guest->id_or_passport_number}}">
-          </div>
-
+       
               <!-- next_of_kin_name -->
           <div class="form-group">
             <label for="next_of_kin_name" class="col-form-label">Next of kin:<i class="text-danger">*</i></label>
@@ -90,6 +85,73 @@
           </div>
         
         
+
+                <!-- tribe -->
+                <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Tribe:</label>
+            <input type="text" class="form-control" id="recipient-name" name="tribe" value="{{$guest->tribe}}">
+          </div>
+
+
+
+        <!-- id type  Passport, NIDA, Driving licenses -->
+          <div class="form-group">
+            <label for="id_type" class="col-form-label"> ID Type<i class="text-danger">*</i></label>
+            <select name="id_type" class="form-control"  id="" >
+        
+            <option selected(true)>{{$guest->id_type}}</option>
+            <option value="passport">Passport</option>
+              <option value="nida">NIDA</option>
+              <option value="driving">Driving lincenses</option>
+            </select>
+          </div>
+
+      
+
+
+          <!-- id_or_passport_number -->
+          <div class="form-group">
+            <label for="id_or_passport_number" class="col-form-label"> ID Number:<i class="text-danger">*</i></label>
+            <input type="text" class="form-control" id="id_or_passport_number" name="id_number" value="{{$guest->id_number}}">
+          </div>
+
+         <!--  ID_Issuing_Authority  -->
+           <div class="form-group">
+            <label for="id_issuing_authority" class="col-form-label">ID Issuing Authority:<i class="text-danger">*</i></label>
+            <input type="text" class="form-control" id="field " name="id_issuing_authority" value="{{$guest->id_issuing_authority}}">
+          </div>
+
+
+           <!--  id_expiration_date  -->
+            <div class="form-group">
+            <label for="id_expiration_date" class="col-form-label">ID Expiration Date:<i class="text-danger">*</i></label>
+            <input type="date" class="form-control" id="field " name="id_expiration_date" value="{{$guest->id_expiration_date}}">
+          </div>
+
+             <!--  arriving_from  -->
+             <div class="form-group">
+            <label for="arriving_from" class="col-form-label">Arriving from:<i class="text-danger">*</i></label>
+            <input type="text" class="form-control" id="field " name="arriving_from" value="{{$guest->arriving_from}}">
+          </div>
+
+         <!-- occupation  -->
+          <div class="form-group">
+            <label for="occupation" class="col-form-label">Occupation:<i class="text-danger">*</i></label>
+            <input type="text" class="form-control" id="field " name="occupation" value="{{$guest->occupation}}"> 
+          </div>
+
+
+            <!--  Purpose_of_Visit  -->
+            <div class="form-group">
+            <label for="purpose_of_visit" class="col-form-label">Purpose of Visit:<i class="text-danger">*</i></label>
+            <textarea name="purpose_of_visit" class="form-control" id="field " >{{$guest->purpose_of_visit}}</textarea>
+          </div>
+
+      
+
+
+
+
 
           <!-- gender -->
           <div class="form-group">
