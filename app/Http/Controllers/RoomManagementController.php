@@ -50,11 +50,11 @@ class RoomManagementController extends Controller
         $room->room_type=$request->input('room_type');
 
         if($request->input('room_type')=='standard'){
-            $room->cost=$room_cost=80000;
+            $room->cost=$room_cost=60000;
         }else if($request->input('room_type')=='deluxe'){
-            $room->cost=$room_cost=100000;
+            $room->cost=$room_cost=80000;
         }else if($request->input('room_type')=='executive'){
-            $room->cost=$room_cost=150000;
+            $room->cost=$room_cost=1200000;
         }
         $room->status=$request->input('status');
         $room->description=$request->input('description');
@@ -98,6 +98,13 @@ class RoomManagementController extends Controller
         $room=Room::find($id);
         $room->room_number=$request->input('room_no');
         $room->room_type=$request->input('room_type');
+          if($request->input('room_type')=='standard'){
+            $room->cost=$room_cost=60000;
+        }else if($request->input('room_type')=='deluxe'){
+            $room->cost=$room_cost=80000;
+        }else if($request->input('room_type')=='executive'){
+            $room->cost=$room_cost=1200000;
+        }
         $room->status=$request->input('status');
         $room->description=$request->input('description');
         $room->save();
