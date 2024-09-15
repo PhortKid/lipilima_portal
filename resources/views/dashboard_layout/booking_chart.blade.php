@@ -10,7 +10,7 @@ new Chart(bookBar, {
         ],
         datasets: [{
             label: '# Year Guest Analytics',
-            data: [12, 19, 3, 5, 2, 3, 7, 10, 8, 6, 9, 11], // Updated data to match labels
+            data: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], // Updated data to match labels
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)', // January
                 'rgba(54, 162, 235, 0.2)', // February

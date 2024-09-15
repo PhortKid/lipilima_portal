@@ -13,7 +13,7 @@
                 datasets: [
                     {
                         label: 'Male Guests',
-                        data: [12, 19, 3, 5, 2, 3, 7, 10, 8, 6, 9, 11], // Male guest data
+                        data: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], // Male guest data
                         backgroundColor: 'rgba(54, 162, 235, 0.5)', // Blue color for male
                         borderColor: 'rgba(54, 162, 235, 1)', // Blue border for male
                         borderWidth: 1,
@@ -21,7 +21,7 @@
                     },
                     {
                         label: 'Female Guests',
-                        data: [10, 15, 5, 8, 6, 4, 9, 12, 7, 5, 8, 13], // Female guest data
+                        data: [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0], // Female guest data
                         backgroundColor: 'rgba(255, 99, 132, 0.5)', // Red color for female
                         borderColor: 'rgba(255, 99, 132, 1)', // Red border for female
                         borderWidth: 1,
@@ -74,7 +74,7 @@ new Chart(ctx2, {
         ],
         datasets: [{
             label: '# Year Guest Analytics',
-            data: [12, 19, 3, 5, 2, 3, 7, 10, 8, 6, 9, 11], // Example data
+            data: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0,0 , 0], // Example data
             borderColor: 'rgba(75, 192, 192, 1)', // Line color
             backgroundColor: 'rgba(75, 192, 192, 0.2)', // Area under the line color
             borderWidth: 2,
