@@ -10,7 +10,7 @@
                                 <p> Dashboard</p>
                             </a> </li>
 
-                         
+                   @if(Auth::user()->role == 'Admin')
                     <!-- Manage Users -->   
                         <li class="nav-item "> <a href="#" class="nav-link "> <i class="nav-icon bi bi-people"></i>
                                 <p>
@@ -26,7 +26,8 @@
                               
                             </ul>
                         </li>
-                        <!-- End Manage user -->|
+                        <!-- End Manage user -->| 
+                         @endif
 
                         <li class="nav-header">Guest & Booking</li>  
 
@@ -89,7 +90,7 @@
    
                             </ul>
                         </li>
-                        <!-- Booking Management -->
+                        <!-- Booking Management -->|
 
 
                              <!-- Room Group Management -->   
@@ -109,7 +110,7 @@
    
                             </ul>
                         </li>
-                      <!-- Room Group Management -->   
+                      <!-- Room Group Management -->|  
 
                       <li class="nav-header">Reservation</li> 
                              <!-- Reservation Management -->   
@@ -147,7 +148,7 @@
 
                                     </ul>
                                 </li>
-                            <!-- Tax Management -->
+                            <!-- Tax Management -->|
 
                             <li class="nav-header">Expenses & Budget</li> 
 
@@ -173,7 +174,7 @@
                         
 
                                 
-                             <!--   Expense Management -->
+                             <!--   Expense Management -->|
 
 
 
