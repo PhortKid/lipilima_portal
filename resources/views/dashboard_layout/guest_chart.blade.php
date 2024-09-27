@@ -13,7 +13,7 @@
                 datasets: [
                     {
                         label: 'Male Guests',
-                        data: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], // Male guest data
+                        data: [{{$guestIn1}}, {{$guestIn2}}, {{$guestIn3}}, {{$guestIn4}}, {{$guestIn5}}, {{$guestIn6}}, {{$guestIn7}}, {{$guestIn8}}, {{$guestIn9}}, {{$guestIn10}}, {{$guestIn11}}, {{$guestIn12}}], // Male guest data
                         backgroundColor: 'rgba(54, 162, 235, 0.5)', // Blue color for male
                         borderColor: 'rgba(54, 162, 235, 1)', // Blue border for male
                         borderWidth: 1,
@@ -21,8 +21,9 @@
                     },
                     {
                         label: 'Female Guests',
-                        data: [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0], // Female guest data
-                        backgroundColor: 'rgba(255, 99, 132, 0.5)', // Red color for female
+                        
+                        data: [{{$female_guestIn1}}, {{$female_guestIn2}}, {{$female_guestIn3}}, {{$female_guestIn4}}, {{$female_guestIn5}}, {{$female_guestIn6}}, {{$female_guestIn7}}, {{$female_guestIn8}}, {{$female_guestIn9}}, {{$female_guestIn10}}, {{$female_guestIn11}}, {{$female_guestIn12}}] ,// Female guest data
+                        backgroundColor: 'rgba(255, 99, 132, 0.5)', // Red color for femalefemale_
                         borderColor: 'rgba(255, 99, 132, 1)', // Red border for female
                         borderWidth: 1,
                         barPercentage: 0.5 // Adjust bar width
@@ -74,7 +75,8 @@ new Chart(ctx2, {
         ],
         datasets: [{
             label: '# Year Guest Analytics',
-            data: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0,0 , 0], // Example data
+    
+            data: [{{$all_guestIn1}}, {{$all_guestIn2}}, {{$all_guestIn3}}, {{$all_guestIn4}}, {{$all_guestIn5}}, {{$all_guestIn6}}, {{$all_guestIn7}}, {{$all_guestIn8}}, {{$all_guestIn9}}, {{$all_guestIn10}}, {{$all_guestIn11}}, {{$all_guestIn12}}] ,// all guest data
             borderColor: 'rgba(75, 192, 192, 1)', // Line color
             backgroundColor: 'rgba(75, 192, 192, 0.2)', // Area under the line color
             borderWidth: 2,
