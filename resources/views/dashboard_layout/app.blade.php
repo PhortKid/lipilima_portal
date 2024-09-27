@@ -374,6 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    @include('dashboard_layout.guest_chart')
    @include('dashboard_layout.booking_chart')
+   @include('dashboard_layout.reservation_chart')
 
 </body><!--end::Body-->
 

@@ -1,13 +1,14 @@
 
-<!-- New Booking -->
+
+<!-- New Reservation -->
 <div class="col-xl-3 col-md-6 mb-4">
     <div class="card border-left-dark shadow h-100 py-2">
         <div class="card-body">
             <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                      New Booking</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$bookingCountnew}}</div>
+                     Today reservation</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$today_reservation}}</div>
                 </div>
                 <div class="col-auto">
                     <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -18,15 +19,15 @@
 </div>
 
 
-<!-- All Booking -->
+<!-- All Reservation -->
 <div class="col-xl-3 col-md-6 mb-4">
     <div class="card border-left-success shadow h-100 py-2">
         <div class="card-body">
             <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                        All Booking</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$bookingCount}}</div>
+                        Month reservation</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$month_reservation}}</div>
                 </div>
                 <div class="col-auto">
                     <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -36,15 +37,15 @@
     </div>
 </div>
 
-<!-- Guests -->
+<!-- reservations -->
 <div class="col-xl-3 col-md-6 mb-4">
     <div class="card border-left-success shadow h-100 py-2">
         <div class="card-body">
             <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                    Guests</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$guestCount}}</div>
+                    Year Reservation</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$year_reservation}}</div>
                 </div>
                 <div class="col-auto">
                     <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -61,8 +62,8 @@
             <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                    Other issue</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">--</div>
+                    All Time Reservation</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$all_reservation}}</div>
                 </div>
                 <div class="col-auto">
                     <i class="fas fa-users fa-2x text-gray-300"></i>

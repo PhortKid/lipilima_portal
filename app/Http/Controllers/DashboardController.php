@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Flasher\Toastr\Prime\ToastrInterface;
 use App\Models\Booking;
+use App\Models\Reservation;
 use App\Models\Guest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,9 +19,9 @@ class DashboardController extends Controller
         toastr()->success('Welcome To Dashboard.');
         $sb2admin=1;
 
-        $bookingCountnew = Booking::where('is_marked', 'no')->count(); 
-        $bookingCount= Booking::count(); 
-        $guestCount=Guest::count();
+        //$bookingCountnew = Booking::where('is_marked', 'no')->count(); 
+        //$bookingCount= Booking::count(); 
+       // $guestCount=Guest::count();
         $userCount=User::count();
         $staffCount=User::where('role', 'Staff')->count(); 
         $accountantCount=User::where('role', 'Accountant')->count(); 
@@ -147,6 +148,45 @@ class DashboardController extends Controller
         ->whereYear('created_at', Carbon::now()->year) 
         ->count();
 
+
+           //all reservation
+           $all_reservationIn1 = Reservation::whereMonth('created_at', 1) 
+           ->whereYear('created_at', Carbon::now()->year)
+           ->count();
+           $all_reservationIn2 = Reservation::whereMonth('created_at', 2) 
+           ->whereYear('created_at', Carbon::now()->year)
+           ->count();
+           $all_reservationIn3 = Reservation::whereMonth('created_at', 3) 
+           ->whereYear('created_at', Carbon::now()->year) 
+           ->count();
+           $all_reservationIn4 = Reservation::whereMonth('created_at', 4) 
+           ->whereYear('created_at', Carbon::now()->year) 
+           ->count();
+           $all_reservationIn5 = Reservation::whereMonth('created_at', 5) 
+           ->whereYear('created_at', Carbon::now()->year) 
+           ->count();
+           $all_reservationIn6 = Reservation::whereMonth('created_at', 6) 
+           ->whereYear('created_at', Carbon::now()->year)
+           ->count();
+           $all_reservationIn7= Reservation::whereMonth('created_at', 7) 
+           ->whereYear('created_at', Carbon::now()->year) 
+           ->count();
+           $all_reservationIn8 = Reservation::whereMonth('created_at', 8) 
+           ->whereYear('created_at', Carbon::now()->year) 
+           ->count();
+           $all_reservationIn9 = Reservation::whereMonth('created_at', 9) 
+           ->whereYear('created_at', Carbon::now()->year) 
+           ->count();
+           $all_reservationIn10 = Reservation::whereMonth('created_at', 10) 
+           ->whereYear('created_at', Carbon::now()->year)
+           ->count();
+           $all_reservationIn11 = Reservation::whereMonth('created_at', 11)
+           ->whereYear('created_at', Carbon::now()->year)
+           ->count();
+           $all_reservationIn12 = Reservation::whereMonth('created_at', 12)
+           ->whereYear('created_at', Carbon::now()->year) 
+           ->count();
+
       
 
 
@@ -156,6 +196,7 @@ class DashboardController extends Controller
     $today_expense = Expense::whereDate('date', $today)->sum('amount');
     $today_booking = Booking::whereDate('created_at', $today)->count();
     $today_guest = Guest::whereDate('created_at', $today)->count();
+    $today_reservation = Reservation::whereDate('created_at', $today)->count();
 
      //month income & expense
     $startOfMonth = Carbon::now()->startOfMonth(); 
@@ -165,6 +206,7 @@ class DashboardController extends Controller
     $month_expense = Expense::whereBetween('date', [$startOfMonth, $endOfMonth])->sum('amount'); 
     $month_booking = Booking::whereBetween('created_at', [$startOfMonth, $endOfMonth])->count(); 
     $month_guest = Guest::whereBetween('created_at', [$startOfMonth, $endOfMonth])->count(); 
+    $month_reservation = Reservation::whereBetween('created_at', [$startOfMonth, $endOfMonth])->count(); 
 
     // year income & expense
     $startOfYear = Carbon::now()->startOfYear(); 
@@ -174,11 +216,13 @@ class DashboardController extends Controller
     $year_expense = Expense::whereBetween('date', [$startOfYear, $endOfYear])->sum('amount');
     $year_guest = Guest::whereBetween('created_at', [$startOfYear, $endOfYear])->count();
     $year_booking = Booking::whereBetween('created_at', [$startOfYear, $endOfYear])->count();
+    $year_reservation = Reservation::whereBetween('created_at', [$startOfYear, $endOfYear])->count();
 
     $all_income=Income::all()->sum('amount');
     $all_expense=Expense::all()->sum('amount');
     $all_booking=Booking::all()->count();
     $all_guest=Guest::all()->count();
+    $all_reservation=Reservation::all()->count();
 
     $today_net_profit=$today_expense-$year_expense;
     $month_net_profit=$month_income-$year_expense;
@@ -189,9 +233,9 @@ class DashboardController extends Controller
     
         return view('dashboard.index', [
             'sb2admin' => $sb2admin,
-            'bookingCount' => $bookingCount,
-            'bookingCountnew' => $bookingCountnew,
-            'guestCount' => $guestCount,
+            //'bookingCount' => $bookingCount,
+           // 'bookingCountnew' => $bookingCountnew,
+           // 'guestCount' => $guestCount,
             'userCount' => $userCount,
             'staffCount' => $staffCount,
             'accountantCount' => $accountantCount,
@@ -212,6 +256,19 @@ class DashboardController extends Controller
             'guestIn10'=>$guestIn10,
             'guestIn11'=>$guestIn11,
             'guestIn12'=>$guestIn12,
+
+            'all_reservationIn1'=>$all_reservationIn1,
+            'all_reservationIn2'=>$all_reservationIn2,
+            'all_reservationIn3'=>$all_reservationIn3,
+            'all_reservationIn4'=>$all_reservationIn4,
+            'all_reservationIn5'=>$all_reservationIn5,
+            'all_reservationIn6'=>$all_reservationIn6,
+            'all_reservationIn7'=>$all_reservationIn7,
+            'all_reservationIn8'=>$all_reservationIn8,
+            'all_reservationIn9'=>$all_reservationIn9,
+            'all_reservationIn10'=>$all_reservationIn10,
+            'all_reservationIn11'=>$all_reservationIn11,
+            'all_reservationIn12'=>$all_reservationIn12,
 
             //female guest
             'female_guestIn1'=>$female_guestIn1,
@@ -269,6 +326,12 @@ class DashboardController extends Controller
             'month_booking'=>$month_booking,
             'year_booking'=>$year_booking,
             'all_booking'=>$all_booking,
+
+            'today_reservation'=> $today_reservation,
+            'month_reservation'=>$month_reservation,
+            'year_reservation'=>$year_reservation,
+            'all_reservation'=>$all_reservation,
+
 
 
 
