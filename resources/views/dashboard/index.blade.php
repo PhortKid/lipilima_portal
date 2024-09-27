@@ -5,7 +5,12 @@
 <div class="row">
 
 @include('dashboard.worker_card')
+@include('dashboard.booking_card')
 @include('dashboard.booking_guest_card')
+@include('dashboard.income_card')
+@include('dashboard.expense_card')
+@include('dashboard.net_profit_card')
+@include('dashboard.net_profit_card')
 
                     <h1>Guest Analytics</h1>
        <div class="row">

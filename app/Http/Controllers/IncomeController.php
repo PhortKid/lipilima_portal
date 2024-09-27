@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-
+use App\Models\Income;
+use App\Models\IncomeCategory;
 class IncomeController extends Controller
 {
     /**
@@ -11,8 +12,16 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        
-        return view('dashboard.income_management.index');
+        $today = Carbon::today(); // Pata tarehe ya leo
+
+        $totalAmount = Income::whereDate('date', $today)->sum('amount'); // Jumlisha kiasi chote
+
+        return $totalAmount;
+      /*
+        $incomes=Income::all();
+        $income_categories=IncomeCategory::all();
+        return view('dashboard.income_management.index')->with('incomes',$incomes)->with('income_categories',$income_categories);
+        */
     }
 
     /**
@@ -28,7 +37,23 @@ class IncomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data= $request->validate(
+            [
+               'amount'=>['required'],
+               'category'=>['required'],
+               'date'=>['required'],
+               'description'=>['nullable'],
+            ]
+            );
+
+
+            $income=new Income;
+            $income->amount=$request->input('amount');
+            $income->category_id=$request->input('category');
+            $income->date=$request->input('date');
+            $income->description=$request->input('description');
+            $income->save();
+            return redirect('/dash/income_management')->with('success','Income Created');
     }
 
     /**
@@ -60,6 +85,8 @@ class IncomeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $expense =Expense::find($id);
+        $expense->delete();
+        return redirect('/dash/expense_management')->with('success','Expense Deleted');
     }
 }

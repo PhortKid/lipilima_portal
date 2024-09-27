@@ -7,6 +7,9 @@ use App\Models\Guest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Models\Income;
+
+use App\Models\Expense;
 
 class DashboardController extends Controller
 {
@@ -144,7 +147,43 @@ class DashboardController extends Controller
         ->whereYear('created_at', Carbon::now()->year) 
         ->count();
 
-  // return $guestInJanuary;
+      
+
+
+    // toady income  & expense
+    $today = Carbon::today(); 
+    $today_income = Income::whereDate('date', $today)->sum('amount');
+    $today_expense = Expense::whereDate('date', $today)->sum('amount');
+    $today_booking = Booking::whereDate('created_at', $today)->count();
+    $today_guest = Guest::whereDate('created_at', $today)->count();
+
+     //month income & expense
+    $startOfMonth = Carbon::now()->startOfMonth(); 
+    $endOfMonth = Carbon::now()->endOfMonth(); 
+
+    $month_income = Income::whereBetween('date', [$startOfMonth, $endOfMonth])->sum('amount'); 
+    $month_expense = Expense::whereBetween('date', [$startOfMonth, $endOfMonth])->sum('amount'); 
+    $month_booking = Booking::whereBetween('created_at', [$startOfMonth, $endOfMonth])->count(); 
+    $month_guest = Guest::whereBetween('created_at', [$startOfMonth, $endOfMonth])->count(); 
+
+    // year income & expense
+    $startOfYear = Carbon::now()->startOfYear(); 
+    $endOfYear = Carbon::now()->endOfYear(); 
+
+    $year_income = Income::whereBetween('date', [$startOfYear, $endOfYear])->sum('amount');
+    $year_expense = Expense::whereBetween('date', [$startOfYear, $endOfYear])->sum('amount');
+    $year_guest = Guest::whereBetween('created_at', [$startOfYear, $endOfYear])->count();
+    $year_booking = Booking::whereBetween('created_at', [$startOfYear, $endOfYear])->count();
+
+    $all_income=Income::all()->sum('amount');
+    $all_expense=Expense::all()->sum('amount');
+    $all_booking=Booking::all()->count();
+    $all_guest=Guest::all()->count();
+
+    $today_net_profit=$today_expense-$year_expense;
+    $month_net_profit=$month_income-$year_expense;
+    $year_net_profit=$year_income-$year_expense;
+    $all_time_net_profit=$all_income-$all_expense;
 
     
     
@@ -200,11 +239,37 @@ class DashboardController extends Controller
             'all_guestIn9'=>$all_guestIn9,
             'all_guestIn10'=>$all_guestIn10,
             'all_guestIn11'=>$all_guestIn11,
-            'all_guestIn12'=>$all_guestIn12
+            'all_guestIn12'=>$all_guestIn12,
 
+           //income
 
+            'today_income'=> $today_income,
+            'month_income'=>$month_income,
+            'year_income'=>$year_income,
+            'all_income'=>$all_income,
 
-            
+            'today_expense'=> $today_expense,
+            'month_expense'=>$month_expense,
+            'year_expense'=>$year_expense,
+            'all_expense'=>$all_expense,
+
+            //net profit
+
+            'today_net_profit'=>$today_net_profit,
+            'month_net_profit'=>$month_net_profit,
+            'year_net_profit'=>$year_net_profit,
+            'all_time_net_profit'=>$all_time_net_profit,
+
+            'today_guest'=> $today_guest,
+            'month_guest'=>$month_guest,
+            'year_guest'=>$year_guest,
+            'all_guest'=>$all_guest,
+
+            'today_booking'=> $today_booking,
+            'month_booking'=>$month_booking,
+            'year_booking'=>$year_booking,
+            'all_booking'=>$all_booking,
+
 
 
         ]);

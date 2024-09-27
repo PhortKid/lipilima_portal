@@ -90,7 +90,7 @@
    
                             </ul>
                         </li>
-                        <!-- Booking Management -->|
+                        <!-- Booking Management -->
 
 
                              <!-- Room Group Management -->   
@@ -150,9 +150,39 @@
                                 </li>
                             <!-- Tax Management -->|
 
+
+                                        <!-- Income Management -->   
+                                        <li class="nav-header">Income </li> 
+
+                                                            
+                                        <li class="nav-item "> <a href="#" class="nav-link "> <i class="fas fa-dollar-sign"></i>
+                                        <p>
+                                        Income Management
+                                        <i class="nav-arrow bi bi-chevron-down"></i>
+                                        </p>
+                                        </a>
+                                        <ul class="nav nav-treeview">
+                                        <li class="nav-item"> <a href="{{ route('income_category.index')}}" class="nav-link active"> <i class="bi bi-chevron-double-right"></i>
+                                                <p>Income Category </p>
+                                            </a> </li>
+
+                                            <li class="nav-item"> <a href="{{ route('income_management.index')}}" class="nav-link active"> <i class="bi bi-chevron-double-right"></i>
+                                                <p>Income  </p>
+                                            </a> </li>
+
+                                            </ul>
+                                        </li>
+
+
+
+                                        
+                                        <!--   Income Management -->|
+
+
+                                     <!-- Expense Management -->   
                             <li class="nav-header">Expenses & Budget</li> 
 
-                              <!-- Expense Management -->   
+                     
                               <li class="nav-item "> <a href="#" class="nav-link "> <i class="fas fa-dollar-sign"></i>
                                 <p>
                                 Expense Management
@@ -200,7 +230,7 @@
 
                         
                                 
-                             <!--  Budget Management -->
+                             <!--  Budget Management -->|
 
 
 
