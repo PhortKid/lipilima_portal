@@ -26,7 +26,7 @@ use App\Http\Controllers\ExpenseManagementController;
 use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\BudgetAllocation;
 use App\Http\Controllers\MarkedController;
-
+use App\Http\Controllers\IncomeController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -76,6 +76,8 @@ Route::middleware('auth')->group(function () {
 
 
      Route::resource('/dash/marked_booking_request', MarkedController::class);
+     
+     Route::resource('/dash/income_management', IncomeController::class);
 
 
 });

@@ -1,5 +1,5 @@
 
-
+@if(isset($guestIn1))
 <script>
         const guestBar = document.getElementById('guestBar').getContext('2d');
 
@@ -114,3 +114,4 @@ new Chart(ctx2, {
     }
 });
 </script>
+@endif
