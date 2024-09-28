@@ -375,6 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
    @include('dashboard_layout.guest_chart')
    @include('dashboard_layout.booking_chart')
    @include('dashboard_layout.reservation_chart')
+   @include('dashboard_layout.income_expense_chart')
 
 </body><!--end::Body-->
 

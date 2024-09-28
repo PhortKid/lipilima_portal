@@ -26,15 +26,11 @@
         </div>
     </div>
 </div>
-  <!--
-       <h1>Booking Analytics</h1>
-     
-     
 
-       <div>
-         <canvas id="bookBar"></canvas>    
-       </div>      
--->
+
+
+
+  <!--      booking -->
  <div class=" ">
    
     <div class="row">
@@ -49,8 +45,32 @@
         </div>
     </div>
 </div>
-       
 
+<!-- income expense and net profit -->
+ <!--
+<div class=" incime and expense">
+   
+  
+        <h1>Income & Expense Analytics</h1>
+            <canvas id="incomeExpenseBar"></canvas>
+      
+</div>
+-->  
+
+<div class=" ">
+   
+   <div class="row">
+   
+       <div class="col-12 col-md-6 mb-4"> 
+       <h1>Income & Expense Analytics</h1>
+            <canvas id="incomeExpenseBar"></canvas>
+       </div>
+       <div class="col-12 col-md-6 mb-4"> 
+       <h1 class="mb-4">Reservation Analytics</h1>
+           <canvas id="reservationBar"></canvas>
+       </div>
+   </div>
+</div>
   
 
 

@@ -188,6 +188,86 @@ class DashboardController extends Controller
            ->count();
 
       
+      //income chart
+
+          
+                $all_incomeIn1 = Income::whereMonth('created_at', 1) 
+                ->whereYear('created_at', Carbon::now()->year)
+                ->sum('amount'); // Replace 'amount' with your actual column name
+            $all_incomeIn2 = Income::whereMonth('created_at', 2) 
+                ->whereYear('created_at', Carbon::now()->year)
+                ->sum('amount');
+            $all_incomeIn3 = Income::whereMonth('created_at', 3) 
+                ->whereYear('created_at', Carbon::now()->year) 
+                ->sum('amount');
+            $all_incomeIn4 = Income::whereMonth('created_at', 4) 
+                ->whereYear('created_at', Carbon::now()->year) 
+                ->sum('amount');
+            $all_incomeIn5 = Income::whereMonth('created_at', 5) 
+                ->whereYear('created_at', Carbon::now()->year) 
+                ->sum('amount');
+            $all_incomeIn6 = Income::whereMonth('created_at', 6) 
+                ->whereYear('created_at', Carbon::now()->year)
+                ->sum('amount');
+            $all_incomeIn7 = Income::whereMonth('created_at', 7) 
+                ->whereYear('created_at', Carbon::now()->year) 
+                ->sum('amount');
+            $all_incomeIn8 = Income::whereMonth('created_at', 8) 
+                ->whereYear('created_at', Carbon::now()->year) 
+                ->sum('amount');
+            $all_incomeIn9 = Income::whereMonth('created_at', 9) 
+                ->whereYear('created_at', Carbon::now()->year) 
+                ->sum('amount');
+            $all_incomeIn10 = Income::whereMonth('created_at', 10) 
+                ->whereYear('created_at', Carbon::now()->year)
+                ->sum('amount');
+            $all_incomeIn11 = Income::whereMonth('created_at', 11)
+                ->whereYear('created_at', Carbon::now()->year)
+                ->sum('amount');
+            $all_incomeIn12 = Income::whereMonth('created_at', 12)
+                ->whereYear('created_at', Carbon::now()->year) 
+                ->sum('amount');
+
+           //expense
+
+                    $all_expenseIn1 = Expense::whereMonth('created_at', 1) 
+                    ->whereYear('created_at', Carbon::now()->year)
+                    ->sum('amount'); // Replace 'amount' with your actual column name
+            $all_expenseIn2 = Expense::whereMonth('created_at', 2) 
+                    ->whereYear('created_at', Carbon::now()->year)
+                    ->sum('amount');
+            $all_expenseIn3 = Expense::whereMonth('created_at', 3) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->sum('amount');
+            $all_expenseIn4 = Expense::whereMonth('created_at', 4) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->sum('amount');
+            $all_expenseIn5 = Expense::whereMonth('created_at', 5) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->sum('amount');
+            $all_expenseIn6 = Expense::whereMonth('created_at', 6) 
+                    ->whereYear('created_at', Carbon::now()->year)
+                    ->sum('amount');
+            $all_expenseIn7 = Expense::whereMonth('created_at', 7) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->sum('amount');
+            $all_expenseIn8 = Expense::whereMonth('created_at', 8) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->sum('amount');
+            $all_expenseIn9 = Expense::whereMonth('created_at', 9) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->sum('amount');
+            $all_expenseIn10 = Expense::whereMonth('created_at', 10) 
+                    ->whereYear('created_at', Carbon::now()->year)
+                    ->sum('amount');
+            $all_expenseIn11 = Expense::whereMonth('created_at', 11)
+                    ->whereYear('created_at', Carbon::now()->year)
+                    ->sum('amount');
+            $all_expenseIn12 = Expense::whereMonth('created_at', 12)
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->sum('amount');
+
+
 
 
     // toady income  & expense
@@ -229,9 +309,9 @@ class DashboardController extends Controller
     $year_net_profit=$year_income-$year_expense;
     $all_time_net_profit=$all_income-$all_expense;
 
+    //return $all_expenseIn1;
     
-    
-        return view('dashboard.index', [
+       return view('dashboard.index', [
             'sb2admin' => $sb2admin,
             //'bookingCount' => $bookingCount,
            // 'bookingCountnew' => $bookingCountnew,
@@ -297,6 +377,37 @@ class DashboardController extends Controller
             'all_guestIn10'=>$all_guestIn10,
             'all_guestIn11'=>$all_guestIn11,
             'all_guestIn12'=>$all_guestIn12,
+
+            //income chart
+            'all_incomeIn1'=>$all_incomeIn1,
+            'all_incomeIn2'=>$all_incomeIn2,
+            'all_incomeIn3'=>$all_incomeIn3,
+            'all_incomeIn4'=>$all_incomeIn4,
+            'all_incomeIn5'=>$all_incomeIn5,
+            'all_incomeIn6'=>$all_incomeIn6,
+            'all_incomeIn7'=>$all_incomeIn7,
+            'all_incomeIn8'=>$all_incomeIn8,
+            'all_incomeIn9'=>$all_incomeIn9,
+            'all_incomeIn10'=>$all_incomeIn10,
+            'all_incomeIn11'=>$all_incomeIn11,
+            'all_incomeIn12'=>$all_incomeIn12,
+
+
+            //expense chart
+            'all_expenseIn1'=>$all_expenseIn1,
+            'all_expenseIn2'=>$all_expenseIn2,
+            'all_expenseIn3'=>$all_expenseIn3,
+            'all_expenseIn4'=>$all_expenseIn4,
+            'all_expenseIn5'=>$all_expenseIn5,
+            'all_expenseIn6'=>$all_expenseIn6,
+            'all_expenseIn7'=>$all_expenseIn7,
+            'all_expenseIn8'=>$all_expenseIn8,
+            'all_expenseIn9'=>$all_expenseIn9,
+            'all_expenseIn10'=>$all_expenseIn10,
+            'all_expenseIn11'=>$all_expenseIn11,
+            'all_expenseIn12'=>$all_expenseIn12,
+
+
 
            //income
 
