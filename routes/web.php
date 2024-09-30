@@ -79,6 +79,9 @@ Route::middleware('auth')->group(function () {
      Route::resource('/dash/marked_booking_request', MarkedController::class);
      
      Route::resource('/dash/income_management', IncomeController::class);
+
+     Route::get('/dash/income_report', [IncomeController::class,'report']);
+
      Route::resource('/dash/income_category', IncomeCategoryController::class);
      
 

@@ -1,3 +1,4 @@
+@if(isset($all_bookingIn1))
 <script>
 const bookBar = document.getElementById('bookBar').getContext('2d');
 
@@ -9,8 +10,22 @@ new Chart(bookBar, {
             'July', 'August', 'September', 'October', 'November', 'December'
         ],
         datasets: [{
-            label: '# Year Guest Analytics',
-            data: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], // Updated data to match labels
+            label: '# Year Booking Analytics',
+            data: [
+    {{$all_bookingIn1}}, 
+    {{$all_bookingIn2}}, 
+    {{$all_bookingIn3}}, 
+    {{$all_bookingIn4}}, 
+    {{$all_bookingIn5}}, 
+    {{$all_bookingIn6}}, 
+    {{$all_bookingIn7}}, 
+    {{$all_bookingIn8}}, 
+    {{$all_bookingIn9}}, 
+    {{$all_bookingIn10}}, 
+    {{$all_bookingIn11}}, 
+    {{$all_bookingIn12}}
+], // Updated data to match labels
+
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)', // January
                 'rgba(54, 162, 235, 0.2)', // February
@@ -67,3 +82,4 @@ new Chart(bookBar, {
     }
 });
 </script>
+@endif

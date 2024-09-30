@@ -1,7 +1,8 @@
+@if(isset($all_net_profit_In1))
 <script>
-const bookBar = document.getElementById('bookBar').getContext('2d');
+const netProfit = document.getElementById('netProfitBar').getContext('2d');
 
-new Chart(bookBar, {
+new Chart(netProfit, {
     type: 'bar',
     data: {
         labels: [
@@ -9,8 +10,22 @@ new Chart(bookBar, {
             'July', 'August', 'September', 'October', 'November', 'December'
         ],
         datasets: [{
-            label: '# Year Guest Analytics',
-            data: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], // Updated data to match labels
+            label: '# Year Net profit Analytics',
+            data: [
+    {{$all_net_profit_In1}}, 
+    {{$all_net_profit_In2}}, 
+    {{$all_net_profit_In3}}, 
+    {{$all_net_profit_In4}}, 
+    {{$all_net_profit_In5}}, 
+    {{$all_net_profit_In6}}, 
+    {{$all_net_profit_In7}}, 
+    {{$all_net_profit_In8}}, 
+    {{$all_net_profit_In9}}, 
+    {{$all_net_profit_In10}}, 
+    {{$all_net_profit_In11}}, 
+    {{$all_net_profit_In12}}
+], // Updated data to match labels
+
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)', // January
                 'rgba(54, 162, 235, 0.2)', // February
@@ -67,3 +82,4 @@ new Chart(bookBar, {
     }
 });
 </script>
+@endif

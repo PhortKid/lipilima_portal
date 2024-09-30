@@ -16,12 +16,12 @@ class IncomeController extends Controller
 
         $totalAmount = Income::whereDate('date', $today)->sum('amount'); // Jumlisha kiasi chote
 
-        return $totalAmount;
-      /*
+       // return $totalAmount;
+      
         $incomes=Income::all();
         $income_categories=IncomeCategory::all();
         return view('dashboard.income_management.index')->with('incomes',$incomes)->with('income_categories',$income_categories);
-        */
+        
     }
 
     /**
@@ -88,5 +88,12 @@ class IncomeController extends Controller
         $expense =Expense::find($id);
         $expense->delete();
         return redirect('/dash/expense_management')->with('success','Expense Deleted');
+    }
+
+    public function report()
+    {
+        $incomes=Income::all();
+        $income_categories=IncomeCategory::all();
+        return view('dashboard.income_management.report')->with('incomes',$incomes)->with('income_categories',$income_categories);
     }
 }

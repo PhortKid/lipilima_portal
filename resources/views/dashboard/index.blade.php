@@ -66,8 +66,8 @@
             <canvas id="incomeExpenseBar"></canvas>
        </div>
        <div class="col-12 col-md-6 mb-4"> 
-       <h1 class="mb-4">Reservation Analytics</h1>
-           <canvas id="reservationBar"></canvas>
+       <h1 class="mb-4">Net Profit Analytics</h1>
+           <canvas id="netProfitBar"></canvas>
        </div>
    </div>
 </div>

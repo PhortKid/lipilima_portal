@@ -187,6 +187,46 @@ class DashboardController extends Controller
            ->whereYear('created_at', Carbon::now()->year) 
            ->count();
 
+
+           //booking 
+           $all_bookingIn1 = Booking::whereMonth('created_at', 1) 
+           ->whereYear('created_at', Carbon::now()->year)
+           ->count();
+            $all_bookingIn2 = Booking::whereMonth('created_at', 2) 
+                    ->whereYear('created_at', Carbon::now()->year)
+                    ->count();
+            $all_bookingIn3 = Booking::whereMonth('created_at', 3) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->count();
+            $all_bookingIn4 = Booking::whereMonth('created_at', 4) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->count();
+            $all_bookingIn5 = Booking::whereMonth('created_at', 5) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->count();
+            $all_bookingIn6 = Booking::whereMonth('created_at', 6) 
+                    ->whereYear('created_at', Carbon::now()->year)
+                    ->count();
+            $all_bookingIn7 = Booking::whereMonth('created_at', 7) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->count();
+            $all_bookingIn8 = Booking::whereMonth('created_at', 8) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->count();
+            $all_bookingIn9 = Booking::whereMonth('created_at', 9) 
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->count();
+            $all_bookingIn10 = Booking::whereMonth('created_at', 10) 
+                    ->whereYear('created_at', Carbon::now()->year)
+                    ->count();
+            $all_bookingIn11 = Booking::whereMonth('created_at', 11)
+                    ->whereYear('created_at', Carbon::now()->year)
+                    ->count();
+            $all_bookingIn12 = Booking::whereMonth('created_at', 12)
+                    ->whereYear('created_at', Carbon::now()->year) 
+                    ->count();
+
+
       
       //income chart
 
@@ -267,6 +307,20 @@ class DashboardController extends Controller
                     ->whereYear('created_at', Carbon::now()->year) 
                     ->sum('amount');
 
+                         //net profit
+            $all_net_profit_In1 = $all_incomeIn1 - $all_expenseIn1;
+            $all_net_profit_In2 = $all_incomeIn2 - $all_expenseIn2;
+            $all_net_profit_In3 = $all_incomeIn3 - $all_expenseIn3;
+            $all_net_profit_In4 = $all_incomeIn4 - $all_expenseIn4;
+            $all_net_profit_In5 = $all_incomeIn5 - $all_expenseIn5;
+            $all_net_profit_In6 = $all_incomeIn6 - $all_expenseIn6;
+            $all_net_profit_In7 = $all_incomeIn7 - $all_expenseIn7;
+            $all_net_profit_In8 = $all_incomeIn8 - $all_expenseIn8;
+            $all_net_profit_In9 = $all_incomeIn9 - $all_expenseIn9;
+            $all_net_profit_In10 = $all_incomeIn10 - $all_expenseIn10;
+            $all_net_profit_In11 = $all_incomeIn11 - $all_expenseIn11;
+            $all_net_profit_In12 = $all_incomeIn12 - $all_expenseIn12;
+
 
 
 
@@ -304,8 +358,8 @@ class DashboardController extends Controller
     $all_guest=Guest::all()->count();
     $all_reservation=Reservation::all()->count();
 
-    $today_net_profit=$today_expense-$year_expense;
-    $month_net_profit=$month_income-$year_expense;
+    $today_net_profit=$today_income-$today_expense;
+    $month_net_profit=$month_income-$month_expense;
     $year_net_profit=$year_income-$year_expense;
     $all_time_net_profit=$all_income-$all_expense;
 
@@ -392,6 +446,21 @@ class DashboardController extends Controller
             'all_incomeIn11'=>$all_incomeIn11,
             'all_incomeIn12'=>$all_incomeIn12,
 
+            //booking 
+            'all_bookingIn1' => $all_bookingIn1,
+            'all_bookingIn2' => $all_bookingIn2,
+            'all_bookingIn3' => $all_bookingIn3,
+            'all_bookingIn4' => $all_bookingIn4,
+            'all_bookingIn5' => $all_bookingIn5,
+            'all_bookingIn6' => $all_bookingIn6,
+            'all_bookingIn7' => $all_bookingIn7,
+            'all_bookingIn8' => $all_bookingIn8,
+            'all_bookingIn9' => $all_bookingIn9,
+            'all_bookingIn10' => $all_bookingIn10,
+            'all_bookingIn11' => $all_bookingIn11,
+            'all_bookingIn12' => $all_bookingIn12,
+
+
 
             //expense chart
             'all_expenseIn1'=>$all_expenseIn1,
@@ -406,6 +475,23 @@ class DashboardController extends Controller
             'all_expenseIn10'=>$all_expenseIn10,
             'all_expenseIn11'=>$all_expenseIn11,
             'all_expenseIn12'=>$all_expenseIn12,
+
+            'all_net_profit_In1' => $all_net_profit_In1,
+            'all_net_profit_In2' => $all_net_profit_In2,
+            'all_net_profit_In3' => $all_net_profit_In3,
+            'all_net_profit_In4' => $all_net_profit_In4,
+            'all_net_profit_In5' => $all_net_profit_In5,
+            'all_net_profit_In6' => $all_net_profit_In6,
+            'all_net_profit_In7' => $all_net_profit_In7,
+            'all_net_profit_In8' => $all_net_profit_In8,
+            'all_net_profit_In9' => $all_net_profit_In9,
+            'all_net_profit_In10' => $all_net_profit_In10,
+            'all_net_profit_In11' => $all_net_profit_In11,
+            'all_net_profit_In12' => $all_net_profit_In12,
+
+
+       
+
 
 
 

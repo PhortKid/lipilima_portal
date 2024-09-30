@@ -11,7 +11,7 @@ new Chart(reservationBar, {
         ],
         datasets: [{
             label: '# Year Guest Analytics',
-            data: [{{$all_reservationIn1}}, 2, {{$all_reservationIn3}}, {{$all_reservationIn4}}, {{$all_reservationIn5}}, {{$all_reservationIn6}}, {{$all_reservationIn7}}, {{$all_reservationIn8}}, {{$all_reservationIn9}}, {{$all_reservationIn10}}, {{$all_reservationIn11}},{{$all_reservationIn12}}],
+            data: [{{$all_reservationIn1}}, {{$all_reservationIn2}}, {{$all_reservationIn3}}, {{$all_reservationIn4}}, {{$all_reservationIn5}}, {{$all_reservationIn6}}, {{$all_reservationIn7}}, {{$all_reservationIn8}}, {{$all_reservationIn9}}, {{$all_reservationIn10}}, {{$all_reservationIn11}},{{$all_reservationIn12}}],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)', // January
                 'rgba(54, 162, 235, 0.2)', // February
