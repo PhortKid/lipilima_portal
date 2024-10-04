@@ -29,6 +29,8 @@ use App\Http\Controllers\MarkedController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\IncomeCategoryController;
 
+use App\Http\Controllers\InvoiceController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -87,7 +89,24 @@ Route::middleware('auth')->group(function () {
 
 
 });
+
+
+
+
+
+
+
+Route::get('/dash/invoices', [InvoiceController::class, 'index'])->name('invoices.index');
+Route::get('/dash/invoices/create', [InvoiceController::class, 'create'])->name('invoices.create');
+Route::post('/dash/invoices', [InvoiceController::class, 'store'])->name('invoices.store');
   
+
+
+
+
+
+
+
 
 Route::get('/send-email/{toAddress}', function ($toAddress) {
     //$toAddress = 'customer.lipilima@gmail.com';

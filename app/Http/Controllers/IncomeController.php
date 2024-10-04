@@ -18,10 +18,11 @@ class IncomeController extends Controller
 
        // return $totalAmount;
       
+       
         $incomes=Income::all();
         $income_categories=IncomeCategory::all();
         return view('dashboard.income_management.index')->with('incomes',$incomes)->with('income_categories',$income_categories);
-        
+       
     }
 
     /**

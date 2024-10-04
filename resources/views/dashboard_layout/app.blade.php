@@ -378,6 +378,45 @@ document.addEventListener('DOMContentLoaded', function() {
    @include('dashboard_layout.income_expense_chart')
    @include('dashboard_layout.net_profit_chart')
  
+
+   <script>
+    // Event listener for when the modal is shown
+    $('#ViewInvoiceModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+
+        // Extract info from data attributes
+        var invoiceNumber = button.data('invoice-number');
+        var customer = button.data('customer');
+        var issueDate = button.data('issue-date');
+        var paymentInfo = button.data('payment-info');
+        var totalAmount = button.data('total-amount');
+        var items = button.data('items');
+
+        // Update the modal's content
+        var modal = $(this);
+        modal.find('#modal-invoice-number').text('Invoice #' + invoiceNumber);
+        modal.find('#modal-customer').text(customer);
+        modal.find('#modal-issue-date').text(issueDate);
+        modal.find('#modal-payment-info').text(paymentInfo);
+        modal.find('#modal-total-amount').text(totalAmount);
+
+        // Populate the items table
+        var itemsTableBody = modal.find('#modal-invoice-items');
+        itemsTableBody.empty(); // Clear existing items
+
+        // Populate items
+        items.forEach(function(item) {
+            itemsTableBody.append(`
+                <tr>
+                    <td>${item.description}</td>
+                    <td>${item.quantity}</td>
+                    <td>${item.price}</td>
+                    <td>${item.subtotal}</td>
+                </tr>
+            `);
+        });
+    });
+</script>
 </body><!--end::Body-->
 
 

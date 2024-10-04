@@ -34,7 +34,7 @@
   @php $counter = 1; @endphp
     @foreach($incomes as $income)
     <tr>
-      <td>{{$counter}}</td>
+      <td>{{$counter++}}</td>
       <td>{{$income->id}}</td>
       <td>{{$income->amount}}</td>
       <td>{{$income->date}}</td>

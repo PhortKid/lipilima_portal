@@ -130,6 +130,33 @@
                                     </ul>
                                 </li>
 
+
+                            <!-- Invoice Management -->   
+                              <li class="nav-header">Invoice </li> 
+
+                                                                                            
+                                <li class="nav-item "> <a href="#" class="nav-link "> <i class="fas fa-dollar-sign"></i>
+                                <p>
+                                Invoice Management
+                                <i class="nav-arrow bi bi-chevron-down"></i>
+                                </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="{{ route('invoices.index')}}" class="nav-link active"> <i class="bi bi-chevron-double-right"></i>
+                                        <p>Invoice </p>
+                                    </a> </li>
+
+                                 
+
+                                    </ul>
+                                </li>
+
+
+
+
+                                <!--   Invoice Management -->|
+
+
                                 
                                 @if(Auth::user()->role == 'Admin')
                                 <li class="nav-header">Tax</li> 
@@ -204,7 +231,7 @@
                         
 
                                 
-                             <!--   Expense Management -->|
+                             <!--   Expense Management -->
 
 
 

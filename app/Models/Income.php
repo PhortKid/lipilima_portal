@@ -11,4 +11,9 @@ class Income extends Model
     protected $table='income';
     public $primarykey='id';
     public $timestamp =true;
+
+    public function incomecategory()
+    {
+        return $this->belongsTo(IncomeCategory::class, 'categories_id'); // Invoice belongs to a Guest (customer)
+    }
 }
