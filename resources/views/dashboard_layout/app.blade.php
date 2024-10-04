@@ -380,9 +380,9 @@ document.addEventListener('DOMContentLoaded', function() {
  
 
    <script>
-    // Event listener for when the modal is shown
+    //invoice render item script 
     $('#ViewInvoiceModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); // Button that triggered the modal
+        var button = $(event.relatedTarget);
 
         // Extract info from data attributes
         var invoiceNumber = button.data('invoice-number');
