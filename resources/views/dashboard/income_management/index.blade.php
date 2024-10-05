@@ -35,7 +35,7 @@
     @foreach($incomes as $income)
     <tr>
       <td>{{$counter++}}</td>
-      <td>{{$income->id}}</td>
+      <td>{{ $income->incomecategory->name }}</td>
       <td>{{$income->amount}}</td>
       <td>{{$income->date}}</td>
       <td>{{$income->created_at}}</td>

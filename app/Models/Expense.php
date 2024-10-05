@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Expense extends Model
 {
     use HasFactory;
-    protected $table='expenses';
-    public $primarykey='id';
-    public $timestamp =true;
+    protected $table = 'expenses';
+    public $primaryKey = 'id';
+    public $timestamps = true;
+
+    // Define the relationship with ExpenseType
+    public function expensetype()
+    {
+        return $this->belongsTo(ExpenseType::class, 'category_id');
+    }
 }

@@ -91,10 +91,27 @@ class IncomeController extends Controller
         return redirect('/dash/expense_management')->with('success','Expense Deleted');
     }
 
-    public function report()
+
+    public function report(Request $request)
     {
-        $incomes=Income::all();
-        $income_categories=IncomeCategory::all();
-        return view('dashboard.income_management.report')->with('incomes',$incomes)->with('income_categories',$income_categories);
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+    
+        $incomes = Income::whereBetween('date', [$startDate, $endDate])->get();
+        $income_categories = IncomeCategory::all();
+    
+        return view('dashboard.income_management.report')->with('incomes', $incomes)->with('income_categories', $income_categories);
     }
+    
+    public function reportByMonth(Request $request)
+    {
+        $month = $request->input('month');
+        $year = Carbon::now()->year; // Pata mwaka wa sasa
+    
+        $incomes = Income::whereMonth('date', $month)->whereYear('date', $year)->get();
+        $income_categories = IncomeCategory::all();
+    
+        return view('dashboard.income_management.report')->with('incomes', $incomes)->with('income_categories', $income_categories);
+    }
+    
 }

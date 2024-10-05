@@ -8,6 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
             <div class="modal-body">
                 <h5>Customer: {{ $invoice->customer->firstname }} {{ $invoice->customer->lastname }}</h5>
                 <p>Address: {{ $invoice->customer->address }}</p>
@@ -37,9 +38,21 @@
                 </table>
                 <h5 class="text-right">Total Amount: {{ $invoice->total_amount }}</h5>
             </div>
+
+
+
+
+
+
+
+
+
+            
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Closes</button>
             </div>
+            
         </div>
     </div>
 </div>

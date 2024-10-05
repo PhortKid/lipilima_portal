@@ -50,6 +50,8 @@
    
 <!-- hii style ni kwaajili ya table ya reservation -->
 <style>
+ 
+
   .table-wrapper {
     max-height: 400px; /* Adjust as needed */
     overflow-y: auto; /* Enable vertical scrolling */
@@ -257,7 +259,7 @@
       "ordering": true,
       "info": true,
       "autoWidth": false,
-      "responsive": true,
+      "responsive": false,
     });
   });
   // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]

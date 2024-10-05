@@ -53,6 +53,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
+            <!-- Tabela ya Kuonyesha Matokeo -->
+            <div class="prinatbeleeee" id="printable-area"> 
+
             <div class="modal-body">
                 <h5 id="modal-invoice-number"></h5>
                 <p><strong>Customer:</strong> <span id="modal-customer"></span></p>
@@ -74,7 +78,11 @@
                 </table>
                 <h5 class="text-right">Total Amount: <span id="modal-total-amount"></span></h5>
             </div>
+                    </div><!-- printable area -->
+
+
             <div class="modal-footer">
+            <button class="btn btn-success" onclick="printContent()">Print Report</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

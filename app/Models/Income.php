@@ -8,12 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Income extends Model
 {
     use HasFactory;
-    protected $table='income';
-    public $primarykey='id';
-    public $timestamp =true;
 
+    protected $table = 'income';  // Table name
+    protected $primaryKey = 'id';  // Primary key
+    public $timestamps = true;      // Enable timestamps
+
+    // Define the relationship with IncomeCategory
     public function incomecategory()
     {
-        return $this->belongsTo(IncomeCategory::class, 'categories_id'); // Invoice belongs to a Guest (customer)
+        return $this->belongsTo(IncomeCategory::class, 'category_id'); // Adjusted to match the foreign key
     }
 }

@@ -35,7 +35,7 @@
     <tr>
       <td>{{$counter}}</td>
     <td>{{$expense->amount}}</td>
-    <td>{{$expense->category_id}}</td>
+    <td>{{ $expense->expensetype->name }}</td>
     <td>{{$expense->date}}</td>
     <td>{{$expense->created_at}}</td>
     <td>

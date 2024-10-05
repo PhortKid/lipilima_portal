@@ -29,6 +29,8 @@ use App\Http\Controllers\MarkedController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\IncomeCategoryController;
 
+use App\Http\Controllers\ExpenseReportController;
+
 use App\Http\Controllers\InvoiceController;
 
 use Illuminate\Support\Facades\Route;
@@ -82,7 +84,6 @@ Route::middleware('auth')->group(function () {
      
      Route::resource('/dash/income_management', IncomeController::class);
 
-     Route::get('/dash/income_report', [IncomeController::class,'report']);
 
      Route::resource('/dash/income_category', IncomeCategoryController::class);
      
@@ -102,9 +103,14 @@ Route::post('/dash/invoices', [InvoiceController::class, 'store'])->name('invoic
   
 
 
+Route::get('/dash/income/report', [IncomeController::class, 'report'])->name('income.report');
+Route::get('/dash/income/report/month', [IncomeController::class, 'reportByMonth'])->name('income.report.byMonth');
 
 
 
+
+
+Route::get('/dash/expense_report', [ExpenseReportController::class, 'index'])->name('expense_report.index');
 
 
 
